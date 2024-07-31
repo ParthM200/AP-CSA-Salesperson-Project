@@ -1,5 +1,3 @@
-//!!!!!!Document each method in this object!
-
 public class product {
     private String productName;
     private int productNumber;
