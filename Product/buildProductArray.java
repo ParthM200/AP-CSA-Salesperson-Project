@@ -16,11 +16,6 @@ public class buildProductArray {
     Scanner alphaScanner = new Scanner(System.in);
     Scanner numberScanner = new Scanner(System.in);
 
-    // public buildProductArray()
-    // {
-
-    // }
-
     public ArrayList<product> runner(ArrayList<product> x) {
         myProductBuilder = x;
 
