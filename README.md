@@ -1,12 +1,10 @@
 # Sales-Product-Tracker
 
 
-Welcome to the Sales Product Tracker repository! This project is designed to help you efficiently track and manage sales data for various products, as well as monitor the performance and goals of sales employees. It offers a user-friendly interface for overseeing sales performance, analyzing trends, tracking employee progress, and generating reports.
+This project is designed as a tool to effeciently track and update employees' sales performance, store and update product inventories, and generate reports on both. 
 
 Features
-Sales Data Management: Add, update, and delete sales records.
-Product Tracking: Keep track of individual product performance.
-Employee Management: Monitor sales employees and their performance.
-Goal Tracking: Set and track goals for sales employees.
-Trend Analysis: Visualize sales trends over time.
-Reporting: Generate detailed sales and employee performance reports.
+Employee Tracking: Add and update employee information, daily sales goals, and sales achieved over the specified period of time
+Update Records: Update an existing employee's records in the system
+Product Tracking: Build and monitor product inventories, prices, and weight (if applicable)
+Reporting: Generate reports on employee performances & product inventory trends over a period of time
