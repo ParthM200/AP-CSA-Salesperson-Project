@@ -16,8 +16,7 @@ public class build {
     private Scanner numberScanner;
     private SalesPerson[] salesPerson;
 
-    public SalesPerson[] runner(SalesPerson[] x) 
-    {
+    public SalesPerson[] runner(SalesPerson[] x) {
         salesPerson = x;
         setup();
 
