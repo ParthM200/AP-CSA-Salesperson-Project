@@ -8,3 +8,9 @@ Features
 - Update Records: Update an existing employee's records in the system
 - Product Tracking: Build and monitor product inventories, prices, and weight (if applicable)
 - Reporting: Generate reports on employee performances & product inventory trends over a period of time
+
+
+Instructions:
+- Clone the repository & navigate to the project directory
+- Install required dependencies and libraries
+- Start the program!
