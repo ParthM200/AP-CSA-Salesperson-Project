@@ -1,4 +1,4 @@
-import java.util.Scanner; // Import the Scanner class
+import java.util.Scanner;
 
 public class build {
 
@@ -12,17 +12,10 @@ public class build {
     private Double totalSales = 0.0;
     private Double totalPer = 0.0;
     private int salesPeople;
-
     private Scanner alphaScanner;
     private Scanner numberScanner;
-
     private SalesPerson[] salesPerson;
 
-    /*************************************
-     * The main method calls the high
-     * level methods to complete the
-     * sales person project.
-     ************************************/
     public SalesPerson[] runner(SalesPerson[] x) {
         salesPerson = x;
         setup();
@@ -32,12 +25,13 @@ public class build {
 
         salesPerson = new SalesPerson[salesPeople];
 
-        // one line comment for program here
+        // One line comment for program here
         for (int i = 0; i < salesPerson.length; i++) {
             captureSalesPersonInformation();
             salesPerson[i] = new SalesPerson(salesPersonLastName, salesPersonFirstName,
                     salesPersonIDNumber, salesPersonDailyGoal, numberDaysOfSalesInfo);
-            // one line comment for segment here
+
+            // One line comment for segment here
             for (int j = 0; j < numberDaysOfSalesInfo; j++) {
                 dayXInfo = 0.0;
                 while (dayXInfo == 0.0) {
@@ -59,24 +53,7 @@ public class build {
 
             System.out.println(salesPerson[i]);
 
-            /***************************************
-             * The loop below will print out the sales for each day that the user entered as
-             * well as how much
-             * of the total goal's percentage that is, and then after that it will calculate
-             * the total
-             * sales percentage using the totalSales that the user enters and dividing that
-             * by the
-             * person's goal to get the percentage, and it will use the math.round method to
-             * clean up the percentage
-             * 
-             * Precondition: The numberDaysOfSalesInfo variable has been defined and entered
-             * by the user
-             * and the user entered sales amounts for each day that they had
-             * 
-             * Postcondition: The sales for each day (and their percentage of the daily
-             * goal) will be printed,
-             * and the total sales and its percentage of the daily goal will also be printed
-             ***************************************/
+            // One Line Comment For This Section
             for (int k = 0; k < numberDaysOfSalesInfo; k++) {
                 System.out.println("The sales for day " + (k + 1) + " are: $" + salesPerson[i].returnAmount(k) +
                         "0 and the sales percentage achieved was: " + salesPerson[i].percentageDailySales(k) + "0%");
@@ -90,21 +67,7 @@ public class build {
             System.out.println();
         }
 
-        /***************************************
-         * The array below will use the returnSPDailyGoal method to extract the daily
-         * goal value of each
-         * instance of the SalesPerson created in the previous array and add them all up
-         * together
-         * Then the array will cycle back through everything until "i <
-         * salesPerson.length" is not true anymore
-         * 
-         * Precondition: The array salesPerson has been created and instantiated, the
-         * SalesPerson object has been created and defined,
-         * and the variable "dailyGoalTotal" has been defined
-         * 
-         * Postcondition: The dailyGoalTotal of all 3 sales people will be added up
-         * together
-         ***************************************/
+        // One Line Comment For Section Here
         for (int i = 0; i < salesPerson.length; i++) {
             dailyGoalTotal += salesPerson[i].returnSPDailyGoal();
         }
@@ -128,17 +91,13 @@ public class build {
         return salesPerson;
     }
 
-    /***************************************
-     * The setup method will instantiate any objects needed
-     * Precondition: The Scanners have been defined as global variables
-     * Postcondition: The scanner have been instantiated
-     ***************************************/
-
+    // Initialize both scanners
     public void setup() {
-        alphaScanner = new Scanner(System.in); // Create a Scanner object
-        numberScanner = new Scanner(System.in); // Create a Scanner object
+        alphaScanner = new Scanner(System.in);
+        numberScanner = new Scanner(System.in);
     }
 
+    // One line comment for method
     public void insertionSort(SalesPerson[] nums) {
         for (int i = 1; i < nums.length; i++) {
             SalesPerson value = nums[i];
@@ -151,16 +110,7 @@ public class build {
         }
     }
 
-    /***************************************
-     * The captureSalesPersonInformation method will ask the user to enter
-     * inforrmation about the sales person: last name, first name, ID, daily goal
-     * and number of days of sales to be entered
-     * Precondition: The Scanners have been instantiated, the variables used have
-     * been defined as global variables
-     * Postcondition: The global variables will hold the information about the
-     * saleperson.
-     ***************************************/
-
+    // One Line Comment For Method
     public void captureSalesPersonInformation() {
         getSalesPersonLastName();
         getSalesPersonFirstName();
@@ -169,26 +119,7 @@ public class build {
         getNumberDaysOfSalesInfo();
     }
 
-    /***************************************
-     * The printSalesPersonReports method will print the inforrmation about the
-     * sales person: last name, first name, ID, daily goal and number of days of
-     * sales to be entered
-     * Precondition: The variables used have been captured and validated.
-     * Postcondition: The inforrmation about each sales person will be printed.
-     ***************************************/
-
-    public void printSalesPersonReports() {
-
-    }
-
-    /***************************************
-     * The getSalesPersonLastName method will print a message to the user and then
-     * read the sales person's last name.
-     * Precondition: The global variable used and the global scanner have been
-     * defined.
-     * Postcondition: The input from the user will be stored in the
-     * salesPersonLastName global variable.
-     ***************************************/
+    // One Line Comment For Method
     public void getSalesPersonLastName() {
         salesPersonLastName = "";
         while (salesPersonLastName.equals("")) {
@@ -197,14 +128,7 @@ public class build {
         }
     }
 
-    /***************************************
-     * The getSalesPersonFirstName method will print a message to the user and then
-     * read the sales person's first name.
-     * Precondition: The global variable used and the global scanner have been
-     * defined.
-     * Postcondition: The input from the user will be stored in the
-     * salesPersonFirstName global variable.
-     ***************************************/
+    // One Line Comment for Mehtod
     public void getSalesPersonFirstName() {
         salesPersonFirstName = "";
         while (salesPersonFirstName.equals("")) {
@@ -213,18 +137,7 @@ public class build {
         }
     }
 
-    /***************************************
-     * The getSalesPersonIDNumber method will print a message to the user to enter
-     * the sales person's ID Number
-     * will validate to make sure that the user input is the correct data type and
-     * matches what the
-     * program expects for the method.
-     * Precondition: The global variable used and the global scanner have been
-     * defined.
-     * Postcondition: The input from the user will be validated to make sure the
-     * correct data type was entered and will
-     * store the appropriate value in the getSalesPersonIDNumber variable.
-     ***************************************/
+    // One Line Comment For Method
     public void getSalesPersonIDNumber() {
         salesPersonIDNumber = 0;
         while (salesPersonIDNumber == 0) {
@@ -243,6 +156,7 @@ public class build {
                             }
 
                             catch (NullPointerException e) {
+
                             }
 
                         }
@@ -255,18 +169,7 @@ public class build {
         }
     }
 
-    /***************************************
-     * The getSalesPersonDailyGoal method will print a message to the user to enter
-     * the sales person's Daily Goal and
-     * will validate to make sure that the user input is the correct data type and
-     * matches what the
-     * program expects.
-     * Precondition: The global variable used and the global scanner have been
-     * defined.
-     * Postcondition: The input from the user will be validated to make sure the
-     * correct data type was entered and will
-     * store the appropriate value in the salesPersonDailyGoal variable.
-     ***************************************/
+    // One Line Comment For Method
     public void getSalesPersonDailyGoal() {
         salesPersonDailyGoal = 0;
         while (salesPersonDailyGoal == 0) {
@@ -284,18 +187,7 @@ public class build {
 
     }
 
-    /***************************************
-     * The getNumberDaysOfSalesInfo method will print a message to the user to enter
-     * the sales person's days of info and
-     * will validate to make sure that the user input is the correct data type and
-     * matches what the
-     * program expects for the method.
-     * Precondition: The global variable used and the global scanner have been
-     * defined.
-     * Postcondition: The input from the user will be validated to make sure the
-     * correct data type was entered and will
-     * store the appropriate value in the getNumberDaysOfSalesInfo variable.
-     ***************************************/
+    // One Line Comment For Method
     public void getNumberDaysOfSalesInfo() {
         numberDaysOfSalesInfo = 0;
         while (numberDaysOfSalesInfo == 0) {
