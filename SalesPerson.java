@@ -5,7 +5,7 @@ public class SalesPerson {
     private double salesPersonDailyGoal;
     private int numberDaysOfSalesInfo;
 
-    //private Double dailySalesAmount;
+    
 
     private Double[] globalArray;
     private Integer[] globalArray2;
