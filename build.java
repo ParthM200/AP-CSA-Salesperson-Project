@@ -2,7 +2,6 @@ import java.util.Scanner; // Import the Scanner class
 
 public class build {
 
-    // change each variable from public to private and also take out the static
     private String salesPersonLastName;
     private String salesPersonFirstName;
     private int salesPersonIDNumber;
@@ -33,54 +32,12 @@ public class build {
 
         salesPerson = new SalesPerson[salesPeople];
 
-        /***************************************
-         * The array below will first define i so that the array runs a total of 3 times
-         * Then the array will ask the user to enter the 5 values through the
-         * captureSalesPersonInformation method,
-         * and it will store and print them in an instance of the salesPerson object
-         * Then the array will cycle back through everything until "i <
-         * salesPerson.length" is not true anymore
-         * 
-         * Precondition: The "captureSalesPersonInformation" method has been created,
-         * the array salesPerson,
-         * has been created and instantiated, the 5 variables regarding SP info have
-         * been defined,
-         * the SalesPerson object has been created and defined, and the variable
-         * "dailyGoalTotal" has been
-         * defined
-         * 
-         * Postcondition: 3 instances of the SalesPerson object will be created and
-         * printed based on user input
-         * for each object
-         ***************************************/
+        // one line comment for program here
         for (int i = 0; i < salesPerson.length; i++) {
             captureSalesPersonInformation();
             salesPerson[i] = new SalesPerson(salesPersonLastName, salesPersonFirstName,
                     salesPersonIDNumber, salesPersonDailyGoal, numberDaysOfSalesInfo);
-            /***************************************
-             * The loop below will ask the user to enter each day's sales info for the
-             * amount of days that they
-             * entered. It will also run data validation to make sure that the value the
-             * user enters is a double
-             * Lastly, at the end of the loop, it will allocate all of those values to each
-             * salesPerson object created through
-             * the "updateDayOfSale" method, using the j value from the loop as well as each
-             * day's info as the receiving
-             * variables. Additionally, the loop using "k" below will extract each sales
-             * amount allocated to the salesPerson Object
-             * using the ".returnAmount(k)" method from the SalesPerson Object to print
-             * every day's sales that the user entered.
-             * 
-             * Precondition: An instance of the salesPerson object has been created and the
-             * user has defined how many days of sales info they have
-             * for the salesPerson object
-             * 
-             * Postcondition: Each day's amount will be allocated to the corresponding
-             * salesPerson object, and the entered value will be
-             * validated to make sure that only doubles are passed to the object and not a
-             * different data type. Each day's sales info wil also be
-             * printed to the user.
-             ***************************************/
+            // one line comment for segment here
             for (int j = 0; j < numberDaysOfSalesInfo; j++) {
                 dayXInfo = 0.0;
                 while (dayXInfo == 0.0) {
@@ -100,7 +57,6 @@ public class build {
                 salesPerson[i].updateDayOfSale(j, dayXInfo);
             }
 
-            // System.out.println("(Before Insertion Sort)");
             System.out.println(salesPerson[i]);
 
             /***************************************
