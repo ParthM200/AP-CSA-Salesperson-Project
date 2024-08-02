@@ -13,7 +13,6 @@ public class product {
         productCost = pCost;
     }
 
-    // example of set method
     public void updateProductName(String name) {
         productName = name;
     }
