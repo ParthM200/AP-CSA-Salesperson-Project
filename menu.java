@@ -1,4 +1,4 @@
-import java.util.Scanner; // Import the Scanner class
+import java.util.Scanner; 
 import java.util.ArrayList;
 
 public class menu {
