@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class menu {
-    // private Scanner alphaScanner;
     private Scanner numberScanner;
 
     private SalesPerson[] salesPerson;
@@ -51,7 +50,7 @@ public class menu {
 
                             buildProductArray myProduct = new buildProductArray();
 
-                            if (productBuilder.size() == 0) {
+                            if (productBuilder.isEmpty()) {
                                 System.out.println("");
                                 System.out.println("There are no products currently in the database");
                             } else {
@@ -75,7 +74,7 @@ public class menu {
 
                             updateProductInfo product = new updateProductInfo();
 
-                            if (productBuilder.size() == 0) {
+                            if (productBuilder.isEmpty()) {
                                 System.out.println("");
                                 System.out.println(
                                         "There are no products currently in the database, you must enter products before you can update them");
@@ -139,7 +138,7 @@ public class menu {
     }
 
     public void setup() {
-        numberScanner = new Scanner(System.in); // Create a Scanner object
+        numberScanner = new Scanner(System.in);
     }
 
 }
