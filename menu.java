@@ -81,8 +81,6 @@ public class menu {
                         else if (userSelection == 4) {
                             userSelection = 4;
 
-                            updateProductInfo product = new updateProductInfo();
-
                             if (productBuilder.isEmpty()) {
                                 System.out.println("");
                                 System.out.println(
@@ -95,11 +93,12 @@ public class menu {
                                 System.out.println("Products currently in database: \n");
 
                                 for (product x : productBuilder) {
-                                    System.out.println("Product " + (arrayCount + 1) + ":" + " " + x);
+                                    System.out.println("Product " + (arrayCount + 1) + ":" + x);
                                     System.out.println("");
                                     arrayCount++;
 
                                 }
+                                updateProductInfo product = new updateProductInfo();
                                 productBuilder = product.runner(productBuilder);
 
                                 System.out.println("");
