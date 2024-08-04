@@ -35,37 +35,46 @@ public class menu {
                         // New Employee Info
                         if (userSelection == 1) {
                             userSelection = 1;
+
+                            // Creates new instance of build class
                             build myBuild = new build();
+
+                            // salesPerson array updated after being passed into the runner method of the
+                            // build class
                             salesPerson = myBuild.runner(salesPerson);
+
                             userSelection = 0;
                         }
                         // Update exisitng employee info
                         else if (userSelection == 2) {
                             userSelection = 2;
+
                             updateGoal myGoal = new updateGoal();
                             salesPerson = myGoal.runner(salesPerson);
+
                             userSelection = 0;
                         }
                         // Add new products to database
                         else if (userSelection == 3) {
                             userSelection = 3;
 
-                            buildProductArray myProduct = new buildProductArray();
-
                             // Checks for empty arraylist
                             if (productBuilder.isEmpty()) {
-                                System.out.println("There are no products currently in the database");
-                            } else {
-                                System.out.println(" ");
+                                System.out.println("\nThere are no products currently in the database");
+                            }
+
+                            // Prints products already in database
+                            else {
                                 System.out.println("Products currently in database: \n");
                                 for (int i = 0; i < productBuilder.size(); i++) {
                                     System.out.println("Product " + (i + 1) + ":" + " " + productBuilder.get(i));
-
                                 }
 
                             }
 
+                            buildProductArray myProduct = new buildProductArray();
                             productBuilder = myProduct.runner(productBuilder);
+
                             userSelection = 0;
                         }
 
@@ -83,7 +92,7 @@ public class menu {
 
                             else {
                                 System.out.println(" ");
-                                System.out.println("Products currently in database: ");
+                                System.out.println("Products currently in database: \n");
 
                                 for (product x : productBuilder) {
                                     System.out.println("Product " + (arrayCount + 1) + ":" + " " + x);

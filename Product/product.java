@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class product {
     private String productName;
     private int productNumber;
@@ -53,11 +55,12 @@ public class product {
         return productCost;
     }
 
-    // change this so that it returns all of the information for this object
     public String toString() {
-        return " Product name is " + productName + ", product number is "
-                + productNumber + ", product weight is " + productWeight + ", there are " + productNumberStock +
-                " of these in stock, and each one costs $" + productCost;
+        // Ensures every product cost printed is in the same format
+        DecimalFormat df = new DecimalFormat("#.00");
+        return " name is " + productName + ", its number is "
+                + productNumber + ", its weight is " + productWeight + ", it's inventory count is " + productNumberStock
+                + " and its unit cost is $" + df.format(productCost);
     }
 
 }

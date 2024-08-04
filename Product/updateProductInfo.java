@@ -25,12 +25,12 @@ public class updateProductInfo {
 
     }
 
-    // Comment
     public ArrayList<product> runner(ArrayList<product> x) {
-        myProductBuilder = x;
 
+        myProductBuilder = x;
         checkID();
-        loop: if (productID >= 0) {
+
+        if (productID >= 0) {
             getFieldSelection();
             if (fieldSelection == 1) {
                 updateProductName();
@@ -49,7 +49,6 @@ public class updateProductInfo {
                 System.out.println(" ");
                 updateProductName();
                 System.out.println(" ");
-                break loop;
             }
         } else {
             System.out.println("You must enter a valid product ID");
@@ -59,38 +58,41 @@ public class updateProductInfo {
         return myProductBuilder;
     }
 
+    // Checks ID to ensure it exists in database
     public void checkID() {
         productID = 0;
-        loop: while (productID == 0) {
+        while (productID == 0) {
             System.out.print("Please enter the ID of the product you would like to update: ");
-            String test01 = " ";
-            if (!(test01 = numberScanner.nextLine()).isEmpty()) {
+            String input = numberScanner.nextLine();
+            // Ensures user input is not empty & in int format
+            if (!input.isEmpty()) {
                 try {
-                    productID = Integer.parseInt(test01);
+                    productID = Integer.parseInt(input);
+                    boolean productExists = false;
+
                     for (product tx : myProductBuilder) {
-                        try {
-                            if (productID == tx.returnProductNumber()) {
-                                tester = (counter + 1);
-                                productID = Integer.parseInt(test01);
-                                variableTester = (counter + 1);
-                                break loop;
-                            }
-                        } catch (NullPointerException e) {
-                            System.out.println("Product ID does not exist in the database, please try again");
-                            productID = 0;
+                        if (productID == tx.returnProductNumber()) {
+                            productExists = true;
+                            break;
                         }
-                        counter++;
                     }
-                    System.out.println("Product does not exist in the database, please try again");
-                    productID = 0;
+                    // If ID doesn't exist in array then message is printed
+                    if (!productExists) {
+                        System.out.println("Product ID does not exist in the database, please try again");
+                        productID = 0;
+                    }
+
                 } catch (NumberFormatException e) {
                     System.out.println("Product ID can only be integers");
                     productID = 0;
                 }
+            } else {
+                System.out.println("Input cannot be empty");
             }
         }
     }
 
+    // Gets user's field selection of which product attribute they want to update
     public void getFieldSelection() {
         fieldSelection = 0;
         while (fieldSelection == 0) {
@@ -98,6 +100,8 @@ public class updateProductInfo {
                     "Enter 1 to update product name, 2 to update product weight, 3 to update product stock, 4 to update product cost, 5 to udpate all fields at once");
             String doubleTest10;
             if (!(doubleTest10 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is an integer then passes fieldSelection to if
+                // statements above
                 try {
                     fieldSelection = Integer.parseInt(doubleTest10);
                 } catch (NumberFormatException e) {
@@ -111,11 +115,13 @@ public class updateProductInfo {
         }
     }
 
+    // Asks user to update product name
     public void updateProductName() {
-        System.out.println("The product's current name is  " + myProductBuilder.get(counter).returnProductName());
+        System.out.println("The product's current name is " + myProductBuilder.get(counter).returnProductName());
         System.out.println("What is the new name you want the product to have? ");
         String doubleTest2 = "";
         if (!(doubleTest2 = alphaScanner.nextLine()).isEmpty()) {
+            // Validates that input is not empty
             try {
                 productName = doubleTest2;
             } catch (NullPointerException e) {
@@ -130,10 +136,11 @@ public class updateProductInfo {
         productWeight = 0.0;
         while (productWeight == 0.0) {
             System.out.println(
-                    "The product's current weight is  " + myProductBuilder.get(counter).returnProductWeight() + "0");
+                    "The product's current weight is " + myProductBuilder.get(counter).returnProductWeight() + "0");
             System.out.println("What is the new weight you want the product to have? ");
             String doubleTest2;
             if (!(doubleTest2 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is in double format
                 try {
                     productWeight = Double.parseDouble(doubleTest2);
                 } catch (NumberFormatException e) {
@@ -150,10 +157,12 @@ public class updateProductInfo {
     public void updateProductStock() {
         productStock = 0;
         while (productStock == 0) {
-            System.out.println("The product's current stock is  " + myProductBuilder.get(counter).returnProductStock());
+            System.out.println("The product's current stock is " + myProductBuilder.get(counter).returnProductStock());
             System.out.println("What is the new stock you want the product to have? ");
             String doubleTest8;
+
             if (!(doubleTest8 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is in int format
                 try {
                     productStock = Integer.parseInt(doubleTest8);
                 } catch (NumberFormatException e) {
@@ -174,6 +183,7 @@ public class updateProductInfo {
             System.out.println("What is the new cost you want the product to have? ");
             String doubleTest3;
             if (!(doubleTest3 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is in double format
                 try {
                     productCost = Double.parseDouble(doubleTest3);
                 } catch (NumberFormatException e) {

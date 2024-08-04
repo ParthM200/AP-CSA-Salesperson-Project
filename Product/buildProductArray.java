@@ -1,4 +1,4 @@
-import java.util.Scanner; // Import the Scanner class
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class buildProductArray {
@@ -18,11 +18,13 @@ public class buildProductArray {
 
     public ArrayList<product> runner(ArrayList<product> x) {
         myProductBuilder = x;
-
         userNumber = 0;
+
+        // Asks user how many products to add
         while (userNumber == 0) {
-            System.out.println("How many products would you like to add?: ");
+            System.out.print("How many products would you like to add?: ");
             String temp;
+            // Ensures user input is positive and a compatible integer
             if (!(temp = alphaScanner.nextLine()).isEmpty()) {
                 try {
                     userNumber = Integer.parseInt(temp);
@@ -33,10 +35,12 @@ public class buildProductArray {
             }
         }
 
+        // Asks user to input info for userNumber products
         for (int i = 0; i < userNumber; i++) {
             System.out.println(" ");
-            System.out.println("Information for product " + (i + 1) + ":");
-            System.out.println("");
+            System.out.println("Product " + (i + 1) + ":");
+
+            // Gathers all info & adds to arrayList
             getProductName();
             getProductNumber();
             getProductWeight();
@@ -45,57 +49,43 @@ public class buildProductArray {
 
             myProductBuilder.add(new product(productName, productNumber, productWeight,
                     productNumberStock, productCost));
-            System.out.println("");
 
         }
 
-        bubbleSort(myProductBuilder);
+        // Prints all collected info from ArrayList
+        System.out.println("\nSummary: \n");
 
         for (int j = 0; j < myProductBuilder.size(); j++) {
-            System.out.println("Product " + (j + 1) + ":" + myProductBuilder.get(j));
+            System.out.println("Product " + (j + 1) + "'s" + myProductBuilder.get(j));
         }
-
         return myProductBuilder;
     }
 
-    public void bubbleSort(ArrayList<product> pro) {
-        int n = pro.size();
-        // Integer temp = 0;
-        product temp;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 1; j < (n - i); j++) {
-                if (pro.get(j - 1).returnProductNumber() > pro.get(j).returnProductNumber()) {
-                    // swap elements
-                    temp = pro.get(j - 1);
-                    pro.set(j - 1, pro.get(j));
-                    pro.set(j, temp);
-                }
-            }
-        }
-    }
-
+    // Gets Product Name & ensures input is not empty
     private void getProductName() {
         productName = "";
         while (productName.equals("")) {
-            System.out.print("Please enter the product's name: ");
+            System.out.print("Enter the product's name: ");
             productName = alphaScanner.nextLine();
         }
     }
 
+    // Gets product ID
     public void getProductNumber() {
         productNumber = 0;
         while (productNumber == 0) {
-            System.out.print("Please enter the product's ID: ");
+            System.out.print("Enter the product's ID: ");
             String test3;
             if (!(test3 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is an integer
                 try {
                     productNumber = Integer.parseInt(test3);
                     {
+                        // Checks that product ID is not duplicate
                         try {
                             for (int i = 0; i < myProductBuilder.size(); i++) {
                                 if (productNumber == myProductBuilder.get(i).returnProductNumber()) {
-                                    System.out.println("Product number must be unique");
+                                    System.out.println("Product's ID must be unique");
                                     productNumber = 0;
                                 }
                             }
@@ -117,9 +107,10 @@ public class buildProductArray {
     public void getProductWeight() {
         productWeight = 0;
         while (productWeight == 0) {
-            System.out.print("Please enter the product's weight(in lbs): ");
+            System.out.print("Enter the product's weight in lbs: ");
             String doubleTest;
             if (!(doubleTest = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that user input is a double
                 try {
                     productWeight = Double.parseDouble(doubleTest);
                 } catch (NumberFormatException e) {
@@ -134,9 +125,10 @@ public class buildProductArray {
     public void getProductNumberStock() {
         productNumberStock = 0;
         while (productNumberStock == 0) {
-            System.out.print("Please enter the quantity of this product currently in stock: ");
+            System.out.print("Enter the inventory count of this item: ");
             String test2;
             if (!(test2 = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is an integer
                 try {
                     productNumberStock = Integer.parseInt(test2);
                 } catch (NumberFormatException e) {
@@ -151,9 +143,10 @@ public class buildProductArray {
     public void getProductCost() {
         productCost = 0;
         while (productCost == 0) {
-            System.out.print("Please enter each of these product's cost: $");
+            System.out.print("Enter the product's unit cost: $");
             String tester = " ";
             if (!(tester = alphaScanner.nextLine()).isEmpty()) {
+                // Validates that input is a double
                 try {
                     productCost = Double.parseDouble(tester);
                 } catch (NumberFormatException e) {
@@ -162,7 +155,6 @@ public class buildProductArray {
                 }
             }
         }
-
     }
 
 }
