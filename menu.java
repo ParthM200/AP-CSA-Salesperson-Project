@@ -32,34 +32,34 @@ public class menu {
                 try {
                     userSelection = Integer.parseInt(test3);
                     {
+                        // New Employee Info
                         if (userSelection == 1) {
-
                             userSelection = 1;
                             build myBuild = new build();
                             salesPerson = myBuild.runner(salesPerson);
-
                             userSelection = 0;
-                        } else if (userSelection == 2) {
+                        }
+                        // Update exisitng employee info
+                        else if (userSelection == 2) {
                             userSelection = 2;
                             updateGoal myGoal = new updateGoal();
                             salesPerson = myGoal.runner(salesPerson);
-
                             userSelection = 0;
-                        } else if (userSelection == 3) {
+                        }
+                        // Add new products to database
+                        else if (userSelection == 3) {
                             userSelection = 3;
 
                             buildProductArray myProduct = new buildProductArray();
 
+                            // Checks for empty arraylist
                             if (productBuilder.isEmpty()) {
-                                System.out.println("");
                                 System.out.println("There are no products currently in the database");
                             } else {
                                 System.out.println(" ");
-                                System.out.println("Products currently in database: ");
-                                System.out.println("");
+                                System.out.println("Products currently in database: \n");
                                 for (int i = 0; i < productBuilder.size(); i++) {
                                     System.out.println("Product " + (i + 1) + ":" + " " + productBuilder.get(i));
-                                    System.out.println("");
 
                                 }
 

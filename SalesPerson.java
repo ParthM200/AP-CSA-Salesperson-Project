@@ -8,10 +8,12 @@ public class SalesPerson {
     private Double[] globalArray;
     private Integer[] globalArray2;
 
-    public SalesPerson() {
+    // public SalesPerson()
+    // {
 
-    }
+    // }
 
+    // Overloaded Constructor to build info for each employee
     public SalesPerson(String sPLN, String sPFN, int sPID, double sPDG,
             int nDOSI) {
         salesPersonLastName = sPLN;
@@ -22,63 +24,42 @@ public class SalesPerson {
         globalArray = new Double[nDOSI];
     }
 
-    // One Line comment for method
-    public SalesPerson(String sPLN, String sPFN, int sPID) {
-        salesPersonLastName = sPLN;
-        salesPersonFirstName = sPFN;
-        salesPersonIDNumber = sPID;
-        salesPersonDailyGoal = 12.33;
-        numberDaysOfSalesInfo = 4;
-    }
-
-    // One Line comment for method
-    public SalesPerson(double sPDG, int nDOSI) {
-        salesPersonLastName = "Smith";
-        salesPersonFirstName = "John";
-        salesPersonIDNumber = 233;
-        salesPersonDailyGoal = sPDG;
-        numberDaysOfSalesInfo = nDOSI;
-    }
-
-    // One Line comment for method
     public void updateSPDailyGoal(double amount) {
         salesPersonDailyGoal = amount;
     }
 
-    // One Line comment for method
     public double returnSPDailyGoal() {
         return salesPersonDailyGoal;
     }
 
-    // One Line comment for method
-    public void updateDayOfSale(Integer day, Double amount) {
+    public void updateDayOfSale(int day, double amount) {
         globalArray[day] = amount;
     }
 
-    public void updateSPIDNumber(Integer position, Integer number) {
+    public void updateSPIDNumber(int position, int number) {
         globalArray2[position] = number;
     }
 
-    public Integer returnSPIDNumber(Integer elementNumber) {
+    public int returnSPIDNumber(int elementNumber) {
         return salesPersonIDNumber;
     }
 
-    // One Line comment for method
-    public Double returnAmount(Integer elementNumber) {
+    public double returnAmount(int elementNumber) {
         return globalArray[elementNumber];
     }
 
-    // One Line comment for method
-    public Double percentageDailySales(Integer elementNumber) {
-        Double j = globalArray[elementNumber];
-        Double newDouble = (j) / ((salesPersonDailyGoal) * 3) * 100;
+    // Calculates
+    public double percentageDailySales(int elementNumber) {
+        double j = globalArray[elementNumber];
+        double newDouble = (j) / ((salesPersonDailyGoal) * 3) * 100;
         newDouble = Math.round(10.0 * newDouble) / 10.0;
         return newDouble;
     }
 
     public String toString() {
         return "Summary: \nThe Sales Person's name is " + salesPersonFirstName + " " + salesPersonLastName
-                + "\nTheir ID number is " + salesPersonIDNumber + "\nTheir daily goal is $" + salesPersonDailyGoal +
+                + "\n" + salesPersonFirstName + "'s ID is: " + salesPersonIDNumber + "\n" + salesPersonFirstName
+                + "'s daily goal is $" + salesPersonDailyGoal +
                 " dollars \nThey have " + numberDaysOfSalesInfo + " days of sales info\n";
     }
 }

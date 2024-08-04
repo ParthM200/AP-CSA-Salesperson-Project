@@ -7,13 +7,18 @@ public class build {
     private int salesPersonIDNumber;
     private double salesPersonDailyGoal;
     private int numberDaysOfSalesInfo;
+
     private double dailyGoalTotal;
     private Double dayXInfo;
+
     private Double totalSales = 0.0;
     private Double totalPer = 0.0;
+
     private int salesPeople;
+
     private Scanner alphaScanner;
     private Scanner numberScanner;
+
     private SalesPerson[] salesPerson;
 
     public SalesPerson[] runner(SalesPerson[] x) {
@@ -37,6 +42,7 @@ public class build {
                 while (dayXInfo == 0.0) {
                     System.out.print("\nPlease enter the sales for day " + (j + 1) + ": ");
                     String doubleTest2;
+
                     // Input Validation
                     if (!(doubleTest2 = alphaScanner.nextLine()).isEmpty()) {
                         try {
@@ -55,7 +61,7 @@ public class build {
             for (int k = 0; k < numberDaysOfSalesInfo; k++) {
                 System.out.println("\n" + salesPersonFirstName + "'s sales for day " + (k + 1) + " are: $"
                         + salesPerson[i].returnAmount(k) +
-                        "0 and the sales percentage achieved that day was: " + salesPerson[i].percentageDailySales(k)
+                        "0 and their sales percentage achieved that day was: " + salesPerson[i].percentageDailySales(k)
                         + "0%");
             }
             totalPer = (totalSales / (salesPersonDailyGoal)) * 100;
@@ -96,7 +102,7 @@ public class build {
         getNumberDaysOfSalesInfo();
     }
 
-    // One Line Comment For Method
+    // Get Employee's Last Name
     public void getSalesPersonLastName() {
         salesPersonLastName = "";
         while (salesPersonLastName.equals("")) {
@@ -105,7 +111,7 @@ public class build {
         }
     }
 
-    // One Line Comment for Mehtod
+    // Get Employee's First Name
     public void getSalesPersonFirstName() {
         salesPersonFirstName = "";
         while (salesPersonFirstName.equals("")) {
@@ -114,7 +120,8 @@ public class build {
         }
     }
 
-    // One Line Comment For Method
+    // Get Employee's ID Number - Checks for emptiness, uniqueness, and proper
+    // character format
     public void getSalesPersonIDNumber() {
         salesPersonIDNumber = 0;
         while (salesPersonIDNumber == 0) {
@@ -146,11 +153,11 @@ public class build {
         }
     }
 
-    // One Line Comment For Method
+    // Get Employee's Daily Sales Goal - Checks for emptiness & number format
     public void getSalesPersonDailyGoal() {
         salesPersonDailyGoal = 0;
         while (salesPersonDailyGoal == 0) {
-            System.out.print("Please enter the sales person's daily goal(in dollars): ");
+            System.out.print("Please enter the sales person's daily goal (in dollars): ");
             String doubleTest;
             if (!(doubleTest = alphaScanner.nextLine()).isEmpty()) {
                 try {
@@ -164,7 +171,7 @@ public class build {
 
     }
 
-    // One Line Comment For Method
+    // Get Employee's Days of Sales Info - Checks for number format and emptiness
     public void getNumberDaysOfSalesInfo() {
         numberDaysOfSalesInfo = 0;
         while (numberDaysOfSalesInfo == 0) {
