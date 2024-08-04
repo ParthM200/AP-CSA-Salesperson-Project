@@ -5,8 +5,6 @@ public class SalesPerson {
     private double salesPersonDailyGoal;
     private int numberDaysOfSalesInfo;
 
-    
-
     private Double[] globalArray;
     private Integer[] globalArray2;
 
@@ -178,8 +176,9 @@ public class SalesPerson {
         return newDouble;
     }
 
+    // FORMAT THIS TO INCLUDE THEIR NAME ON EACH LINE BEFORE EACH SUBJECT
     public String toString() {
-        return "The Sales Person's name is " + salesPersonFirstName + " " + salesPersonLastName
+        return "Summary: \nThe Sales Person's name is " + salesPersonFirstName + " " + salesPersonLastName
                 + "\nTheir ID number is " + salesPersonIDNumber + "\nTheir daily goal is $" + salesPersonDailyGoal +
                 " dollars \nThey have " + numberDaysOfSalesInfo + " days of sales info\n";
     }

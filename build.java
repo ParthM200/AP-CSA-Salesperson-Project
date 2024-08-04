@@ -25,19 +25,19 @@ public class build {
 
         salesPerson = new SalesPerson[salesPeople];
 
-        // One line comment for program here
+        // Asks user to add info for salesPerson.length people
         for (int i = 0; i < salesPerson.length; i++) {
             captureSalesPersonInformation();
             salesPerson[i] = new SalesPerson(salesPersonLastName, salesPersonFirstName,
                     salesPersonIDNumber, salesPersonDailyGoal, numberDaysOfSalesInfo);
 
-            // One line comment for segment here
+            // Nested loop to add numberDaysOfSalesInfo for each salesperson
             for (int j = 0; j < numberDaysOfSalesInfo; j++) {
                 dayXInfo = 0.0;
                 while (dayXInfo == 0.0) {
-                    System.out.print("Please enter the sales for day " + (j + 1) + ":");
-                    System.out.println("");
+                    System.out.print("\nPlease enter the sales for day " + (j + 1) + ": ");
                     String doubleTest2;
+                    // Input Validation
                     if (!(doubleTest2 = alphaScanner.nextLine()).isEmpty()) {
                         try {
                             dayXInfo = Double.parseDouble(doubleTest2);
@@ -51,19 +51,19 @@ public class build {
                 salesPerson[i].updateDayOfSale(j, dayXInfo);
             }
 
-            System.out.println(salesPerson[i]);
-
-            // One Line Comment For This Section
+            // Prints sales info for each day of salesperson
             for (int k = 0; k < numberDaysOfSalesInfo; k++) {
-                System.out.println("The sales for day " + (k + 1) + " are: $" + salesPerson[i].returnAmount(k) +
-                        "0 and the sales percentage achieved was: " + salesPerson[i].percentageDailySales(k) + "0%");
+                System.out.println("\n" + salesPersonFirstName + "'s sales for day " + (k + 1) + " are: $"
+                        + salesPerson[i].returnAmount(k) +
+                        "0 and the sales percentage achieved that day was: " + salesPerson[i].percentageDailySales(k)
+                        + "0%");
             }
-
             totalPer = (totalSales / (salesPersonDailyGoal)) * 100;
             totalPer = Math.round(10.0 * totalPer) / 10.0;
 
-            System.out.println("Total sales are: $" + totalSales +
-                    "0 and the total percentage acheived was " + totalPer + "%");
+            // Prints total sales for person
+            System.out.println("\n" + salesPersonFirstName + "'s total sales achieved are: $" + totalSales +
+                    "0 and the total sales percentage acheived was " + totalPer + "%");
             System.out.println();
         }
 
@@ -72,17 +72,7 @@ public class build {
             dailyGoalTotal += salesPerson[i].returnSPDailyGoal();
         }
 
-        System.out.println("The total of all sales goals is $" + dailyGoalTotal);
-
-        System.out.println("Before insertion sort: ");
-        System.out.println("");
-        for (int i = 0; i < salesPerson.length; i++) {
-            System.out.println(salesPerson[i]);
-        }
-
-        insertionSort(salesPerson);
-        System.out.println("After insertion sort: ");
-        System.out.println("");
+        System.out.println("The total of all employees' sales goals is $" + dailyGoalTotal + "\n");
 
         for (int i = 0; i < salesPerson.length; i++) {
             System.out.println(salesPerson[i]);
@@ -95,19 +85,6 @@ public class build {
     public void setup() {
         alphaScanner = new Scanner(System.in);
         numberScanner = new Scanner(System.in);
-    }
-
-    // One line comment for method
-    public void insertionSort(SalesPerson[] nums) {
-        for (int i = 1; i < nums.length; i++) {
-            SalesPerson value = nums[i];
-            int j = i - 1;
-            while ((j > -1) && nums[j].returnSPIDNumber(j) > value.returnSPIDNumber(i)) {
-                nums[j + 1] = nums[j];
-                j = j - 1;
-            }
-            nums[j + 1] = value;
-        }
     }
 
     // One Line Comment For Method

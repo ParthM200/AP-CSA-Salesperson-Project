@@ -1,4 +1,4 @@
-import java.util.Scanner; 
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class menu {
@@ -139,7 +139,6 @@ public class menu {
     }
 
     public void setup() {
-        // alphaScanner = new Scanner(System.in); // Create a Scanner object
         numberScanner = new Scanner(System.in); // Create a Scanner object
     }
 
