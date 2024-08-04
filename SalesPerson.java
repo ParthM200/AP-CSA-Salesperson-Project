@@ -8,11 +8,6 @@ public class SalesPerson {
     private Double[] globalArray;
     private Integer[] globalArray2;
 
-    // public SalesPerson()
-    // {
-
-    // }
-
     // Overloaded Constructor to build info for each employee
     public SalesPerson(String sPLN, String sPFN, int sPID, double sPDG,
             int nDOSI) {
@@ -48,10 +43,10 @@ public class SalesPerson {
         return globalArray[elementNumber];
     }
 
-    // Calculates
+    // Calculates employee's daily sales achieved as a percentage
     public double percentageDailySales(int elementNumber) {
         double j = globalArray[elementNumber];
-        double newDouble = (j) / ((salesPersonDailyGoal) * 3) * 100;
+        double newDouble = (j) / (salesPersonDailyGoal) * 100;
         newDouble = Math.round(10.0 * newDouble) / 10.0;
         return newDouble;
     }

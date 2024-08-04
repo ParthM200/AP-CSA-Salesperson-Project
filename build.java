@@ -64,6 +64,8 @@ public class build {
                         "0 and their sales percentage achieved that day was: " + salesPerson[i].percentageDailySales(k)
                         + "0%");
             }
+
+            // Calculates total sales achieved as a percentage
             totalPer = (totalSales / (salesPersonDailyGoal)) * 100;
             totalPer = Math.round(10.0 * totalPer) / 10.0;
 
@@ -73,7 +75,7 @@ public class build {
             System.out.println();
         }
 
-        // One Line Comment For Section Here
+        // Calculates the total of every employee's daily goal
         for (int i = 0; i < salesPerson.length; i++) {
             dailyGoalTotal += salesPerson[i].returnSPDailyGoal();
         }
