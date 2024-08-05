@@ -32,6 +32,7 @@ public class menu {
             System.out.println("");
 
             System.out.print("Enter your selection - ");
+
             String test3 = "";
             if (!(test3 = numberScanner.nextLine()).isEmpty()) {
                 try {
@@ -72,7 +73,7 @@ public class menu {
                             else {
                                 System.out.println("Products currently in database: \n");
                                 for (int i = 0; i < productBuilder.size(); i++) {
-                                    System.out.println("Product " + (i + 1) + ":" + " " + productBuilder.get(i));
+                                    System.out.println("Product " + (i + 1) + ": " + productBuilder.get(i));
                                 }
 
                             }
@@ -89,7 +90,7 @@ public class menu {
                             if (productBuilder.isEmpty()) {
                                 System.out.println("");
                                 System.out.println(
-                                        "There are no products currently in the database, you must enter products before you can update them");
+                                        "Database is currently empty, you must enter products before you can update them");
                                 userSelection = 0;
                             }
 
@@ -139,7 +140,7 @@ public class menu {
                 }
             } else {
                 System.out.println("");
-                System.out.println("You must select either option 1 2, 3 or 99!");
+                System.out.println("You must select option 1, 2, 3 or 99!");
 
             }
         }
