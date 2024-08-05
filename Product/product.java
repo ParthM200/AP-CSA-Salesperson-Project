@@ -56,7 +56,7 @@ public class product {
     }
 
     public String toString() {
-        // Ensures every product cost printed is in the same format
+        // Ensures every product cost is printedin the same format
         DecimalFormat df = new DecimalFormat("#.00");
         return " name is " + productName + ", its ID is "
                 + productNumber + ", it weighs " + df.format(productWeight) + " lbs, there are " + productNumberStock

@@ -13,19 +13,24 @@ public class menu {
     private int arrayCount1;
 
     public menu() {
-        setup();
+        numberScanner = new Scanner(System.in);
 
         userSelection = 0;
         while (userSelection == 0) {
-            System.out.println("");
             System.out.println("Please select which option you would like to do: ");
             System.out.println("");
+
             System.out.println("Option 1 - Enter new salesperson information");
+
             System.out.println("Option 2 - Update existing salesperson goal");
+
             System.out.println("Option 3 - Build Product Database");
+
             System.out.println("Option 4 - Update existing product info");
+
             System.out.println("Option 99 - Finished");
             System.out.println("");
+
             System.out.print("Enter your selection - ");
             String test3 = "";
             if (!(test3 = numberScanner.nextLine()).isEmpty()) {
@@ -144,9 +149,4 @@ public class menu {
     public void runner() {
 
     }
-
-    public void setup() {
-        numberScanner = new Scanner(System.in);
-    }
-
 }
